@@ -5,7 +5,7 @@ import cookieParser from "cookie-parser";
 import session from 'express-session';
 import flash from 'express-flash';
 
-import { localsMiddleware } from './middlewares';
+import { verifyToken, localsMiddleware } from './middlewares';
 import rootRouter from './routers/rootRouter';
 
 const app = express()
@@ -29,9 +29,10 @@ app.use(
   }),
 );
 app.use(flash());
-
 app.use('/static', express.static('public'));
+app.use(verifyToken)
 app.use(localsMiddleware)
+
 app.use('/', rootRouter)
 
 const PORT = 4000;

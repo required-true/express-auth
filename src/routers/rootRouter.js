@@ -1,7 +1,7 @@
 import express from 'express';
 import { home } from '../controllers/rootController'
 import { memberOnlyMiddleware, anonOnlyMiddleware } from '../middlewares';
-import { getLogin, postLogin, logout } from '../controllers/sessionController'
+import { getLogin, postLogin, logout } from '../controllers/authController'
 
 const rootRouter = express.Router();
 

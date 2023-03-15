@@ -12,11 +12,3 @@ export const users = [
     password: '123',
   }
 ]
-
-export const isValidUser = (username, password) => {
-  const user = users.find((u) => u.username === username && u.password === password)
-  if (!user) {
-    return false
-  }
-  return true
-}
