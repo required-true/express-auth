@@ -1,0 +1,11 @@
+extends layout
+
+block content
+  h2 Token Login
+    
+  form#tokenLoginForm(method="POST")
+    label(for="")  
+      input(name="username" type="text", placeholder="test")
+    label(for="")  
+      input(name="password" type="password", placeholder="123")
+    button(type="submit") Login

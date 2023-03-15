@@ -1,1 +1,13 @@
-header Header
+header
+  nav
+    h1 
+      a(href="/") Auth
+    ul
+      if !loggedIn
+        li
+          a(href="/session-login") Session-login
+        li
+          a(href="/token-login") Token-login
+      else 
+        li
+          a(href="/logout") Logout
