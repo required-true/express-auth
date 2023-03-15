@@ -9,7 +9,7 @@ export const memberOnlyMiddleware = (req, res, next) => {
     return next();
   } else {
     req.flash('error', 'Log in first.');
-    return res.redirect('/session-login');
+    return res.redirect('/login');
   }
 };
 

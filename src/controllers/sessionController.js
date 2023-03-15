@@ -1,10 +1,10 @@
 import { isValidUser } from '../models/User'
 
-export const getSessionLogin = (req, res) => {
-  return res.render('session-login')
+export const getLogin = (req, res) => {
+  return res.render('login')
 }
 
-export const postSessionLogin = (req, res) => {
+export const postLogin = (req, res) => {
   const { username, password } = req.body
 
   if (isValidUser(username, password)) {
@@ -14,11 +14,11 @@ export const postSessionLogin = (req, res) => {
 
   } else {
     req.flash('error', 'User authorization failed')
-    return res.redirect('/session-login')
+    return res.redirect('/login')
   }
 }
 
 export const logout = (req, res) => {
   req.session.destroy();
-  return res.redirect('/session-login');
+  return res.redirect('/login');
 }
